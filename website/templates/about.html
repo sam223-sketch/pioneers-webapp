@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+<style type="text/css">
+	main{
+        
+        width: 980px;
+        margin: 0 auto;
+        padding: 10px;
+
+      }
+      @media screen and (max-width: 700px) {
+                  
+                  main{
+                    width: 100%;
+                    position: relative;
+                    left: 0px;
+                    margin-right: 100px;
+                    padding-left:10px;
+                  }
+</style>
+
+<main>
+<h1 style="text-align: center;">About Us</h1>
+<br/>
+<div class="about-bio" style="text-align: center;">
+    <p>We are a group of young minds, paasionate about community development, seeking to be societal engineers and hoping to drive changes in their Region and beyond.
+    <br/><br/>
+    We belive that the realization of these changes can be done with united efforts and well-concerted partnerships and collaborations through an all-inclusive approach.
+    <br/><br/>
+    The group envisage initiating projects in the field of Education, through Educational Enhancement(EEP); Environment and Sanitation, through an Environmental Stewardship Programs(ESP); Health, through a Comprehensive Health Packs(CHP), and Agriculture, through a 3D/Modernized Agricultural Techniques(MAT).
+    </p>
+
+</div>
+</main>
+{% endblock%}

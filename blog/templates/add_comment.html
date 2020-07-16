@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Create A New Blog Comment {% endblock %}
+{% block content %}
+
+	<h3>Add Blog Comment</h3>
+	<br/>
+
+	<div class="form-group">
+		<form method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="btn btn-secondary">Post</button>
+	</div>
+
+{% endblock %}

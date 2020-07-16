@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    
+      <style type="text/css">
+        #activities hr{
+            width: 150px;
+            height: 2px;
+            background-color: #078B0B;
+            border: 0;
+            margin: 40px auto;
+        }
+
+
+        body {  
+            margin: 0;  
+            background: #e6e6e6;  
+        }  
+        .showSlide {  
+            display: none  
+        }  
+            .showSlide img {  
+                width: 100%;  
+            }  
+        .slidercontainer {  
+            max-width: 1000px;  
+            position: relative;  
+            margin: auto;  
+        }  
+        .left, .right {  
+            cursor: pointer;  
+            position: absolute;  
+            top: 50%;  
+            width: auto;  
+            padding: 16px;  
+            margin-top: -22px;  
+            color: white;  
+            font-weight: bold;  
+            font-size: 18px;  
+            transition: 0.6s ease;  
+            border-radius: 0 3px 3px 0;  
+        }  
+        .right {  
+            right: 0;  
+            border-radius: 3px 0 0 3px;  
+        }  
+            .left:hover, .right:hover {  
+                background-color: rgba(115, 115, 115, 0.8);  
+            }  
+        .content {  
+            color: #eff5d4;  
+            font-size: 30px;  
+            padding: 8px 12px;  
+            position: absolute;  
+            top: 10px;  
+            width: 100%;  
+            text-align: center;  
+        }  
+        .active {  
+            background-color: #717171;  
+        }  
+        /* Fading animation */  
+        .fade {  
+            -webkit-animation-name: fade;  
+            -webkit-animation-duration: 1.5s;  
+            animation-name: fade;  
+            animation-duration: 1.5s;  
+        }  
+        @-webkit-keyframes fade {  
+            from {  
+                opacity: .4  
+            }  
+            to {  
+                opacity: 1  
+            }  
+        }  
+  
+        @keyframes fade {  
+            from {  
+                opacity: .4  
+            }  
+            to {  
+                opacity: 1  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="slidercontainer">  
+        <div class="showSlide fade">  
+            <img src="{% static 'websites/img/PIONEERS-BANNER.jpg' %}" class="d-block w-100" alt="..."> 
+            <div class="content"></div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="{% static 'websites/img/PIONEERS-BANNER2.jpg' %}" class="d-block w-100" alt="..."> 
+            <div class="content"></div>  
+        </div>  
+  
+        <div class="showSlide fade">  
+        <img src="{% static 'websites/img/PIONEERS-BANNER3.jpg' %}" class="d-block w-100" alt="...">  
+            <div class="content"></div>  
+        </div>  
+        
+        <!-- Navigation arrows -->  
+        <a class="left" onclick="nextSlide(-1)">❮</a>  
+        <a class="right" onclick="nextSlide(1)">❯</a>  
+    </div>  
+  
+    <script type="text/javascript">  
+        var slide_index = 1;  
+        displaySlides(slide_index);  
+  
+        function nextSlide(n) {  
+            displaySlides(slide_index += n);  
+        }  
+  
+        function currentSlide(n) {  
+            displaySlides(slide_index = n);  
+        }  
+  
+        function displaySlides(n) {  
+            var i;  
+            var slides = document.getElementsByClassName("showSlide");  
+            if (n > slides.length) { slide_index = 1 }  
+            if (n < 1) { slide_index = slides.length }  
+            for (i = 0; i < slides.length; i++) {  
+                slides[i].style.display = "none";  
+            }  
+            slides[slide_index - 1].style.display = "block";  
+        }  
+    </script>  
+    
+    <!--SLIDING IMAGES START-->
+   
+      <!--SLIDING IMAGES START-->
+
+      <div id="activities">
+            <h2 class="what-we-do">What We Do</h2> &nbsp;
+            <ul class="grid">
+                <li><i class="fas fa-chalkboard-teacher ico"></i><h4>Education</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><hr></li>
+                <li><i class="fas fa-hands-helping ico"></i><h4>Empowerment</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><hr></li>
+                <li><i class="fas fa-people-carry ico"></i><h4>Projects</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><hr></li>
+            </ul>
+        
+        </div>
+        
+        
+        <div id="about">
+            <h2 class="title">ABOUT US</h2>&nbsp;
+            <div id="two-cols">
+                <div class="about-img"><img src="{% static 'websites/img/pioneers.png' %}" height="100px" width="100px" alt="the pioneers"></div>
+                <div class="about-bio">
+                    <p>We are a group of young minds, paasionate about community development, seeking to be societal engineers and hoping to drive changes in their Region and beyond.
+                    <br/><br/>
+                    We belive that the realization of these changes can be done with united efforts and well-concerted partnerships and collaborations through an all-inclusive approach.
+                    <br/><br/>
+                    The group envisage initiating projects in the field of Education, through Educational Enhancement(EEP); Environment and Sanitation, through an Environmental Stewardship Programs(ESP); Health, through a Comprehensive Health Packs(CHP), and Agriculture, through a 3D/Modernized Agricultural Techniques(MAT).
+                    </p>
+                </div>
+                </div>
+                
+                <p>&nbsp;</p>
+            <hr>
+        </div>  
+    </body>
+    
+</html>
+
+
+{% endblock%}

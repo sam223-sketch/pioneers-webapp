@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title.tag }}{% endblock %}
+{% load static %}
+
+
+{% block content %}
+  <head>
+        <style>
+          main{
+              height: 100%;
+              width: 980px;
+              margin: 0 auto;
+              padding: 10px;
+
+            }
+          /* Style all font awesome icons */
+           #sidebar .fa {  
+              padding: 20px;  
+              font-size: 30px;  
+              width: 50px;  
+              text-align: center;  
+              text-decoration: none;
+            }
+              /* Add a hover effect if you want */
+           #sidebar .fa:hover {  
+              opacity: 0.7;
+            }
+            /* Set a specific color for each brand *//* Facebook */
+           #sidebar .fa-facebook {  
+              background: #3B5998;  
+              color: white;
+            }
+
+            /* Twitter */
+           #sidebar .fa-twitter {  
+              background: #55ACEE;  
+              color: white;
+            } 
+              #sidebar {
+                width: 240px;
+                position: absolute;
+                z-index: 1;
+                top: 150px;
+                height: auto;
+                border-radius: 10px;
+                right: 10px;
+                background: #fff;
+               
+                padding: 8px 0;
+              }
+              #sidebar ul a{
+                color: #535453;
+                list-style: none;
+                display: block;
+                margin: 0 6px;
+                text-decoration: none;
+                padding-top: 20px;
+                
+              }
+              #content
+                {
+                    
+                    right:20px;
+                    width:75%;
+                    position: relative;
+                    left:10px;
+                }
+              #content h1{
+                color: #535453;
+              }
+              
+                #content
+                {
+                    /*height:300px;*/
+                    background-color: #fff;
+                    /*border: 2px solid red;*/
+                    border-radius: 10px;
+                    /*margin: 0 10px;*/
+                }
+                #content ul{
+                  text-decoration: none;
+                  text-decoration-style: none;
+                  margin: 0 10px 0 0;
+
+                }
+                #content p{
+                  text-align: left;
+                  line-height: 26pt;
+                }
+                #content hr{
+                  width: 70%;
+                  font-color: white;
+                }
+
+                @media screen and (max-width: 700px) {
+                  #sidebar {
+                    width: 100%;
+                    height: 300px;
+                    position: relative;
+                    left: 0;
+                    padding-top: 50px;
+                    margin-bottom: 170px;
+                    
+                  }
+                  #sidebar ul a{
+                    
+                    list-style: none;
+                    display: list-item;
+                    padding: 5px;
+                  }
+                  #content{
+                    width: 100%;
+                    position: relative;
+                    left: 0px;
+                    margin-right: 100px;
+                    padding-left:10px;
+                  }
+                  #sidebar a {float: left;}
+                  #content {margin-left: 0;}
+                }
+        </style>
+    
+    </head>
+          <main>
+          <br/>
+          
+
+          <div id="content">
+
+               <h1>{{ post.title }}</h1></a>
+               <small>By
+                    {{ post.author }} - 
+                    {{ post.post_date }}</small>
+                    <hr>
+                    <br/>
+                    
+                <br/><br/>
+                    {% if post.header_image %}
+                    <img src="{{ post.header_image.url }}" height="200" width="250">
+                    {% endif %}
+                    <p>{{ post.body|safe }}</p>
+
+                    <br/>
+
+              </ul>
+            </div>
+            
+            <div id="sidebar">
+              <ul>
+                <a href="#">Link1</a>
+                <a href="#">Link2</a>
+                <a href="#">Link3</a>
+                <a href="#">Link4</a>
+                <a href="#">Link5</a>
+                <a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-twitter"></a>
+              </ul>
+
+            </div>
+</main>
+{% endblock %}          
+ <!--
+    <footer>
+            
+        
+            <ul>
+                <li><a href="" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <p>Send a Email: impact.pioneers@gmail.com</p><br/>
+            
+            
+            <p>&copy;<script>document.write(new Date().getFullYear())</script> THE PIONEERS ESTABLISHED IN 2018</p>
+            
+        </footer>
+       
+        <script type="text/javascript">
+  $(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {e.preventDefault();
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').stop().animate({
+          'scrollTop': $target.offset().top-100
+    }, 900, 'swing', function () {
+          window.location.hash = target-100;
+    });
+         });
+});
+</script>
+        
+        <script>
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                  x.className += " responsive";
+                } else {
+                  x.className = "topnav";
+                }
+              } 
+        </script>
+      -->
+
+
+
+

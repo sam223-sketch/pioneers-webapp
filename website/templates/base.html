@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--responsive-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--FAVI-ICON-->
+        <link rel="shortcut icon" type="image/ico" href="{% static 'websites/img/pioneers.png' %}"/>
+        <!--GOOGLE-FONTS-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        
+        <link rel="stylesheet" href="{% static 'websites/css/style.css' %}">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" data-search-pseudo-elements></script>
+
+
+        
+        <!--TITLE-->
+        <title>the_pioneers</title> 
+    </head>
+    <body id="top">
+        <header>
+            <h2><a href="#" targer="_blank"><img src="{% static 'websites/img/pioneers.png' %}" height="70px" width="70px" alt=""></a> </h2>
+            <nav class="topnav" id="myTopnav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a> </li>
+                    <li><a href="{% url 'blog' %}">Blog</a> </li>
+                    <li><a href="{% url 'about' %}">About</a> </li>
+                    <li><a href="{% url 'contact' %}">Contact</a> </li>
+                    <!--
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i>
+                    </a>
+                    -->
+                </ul>
+            </nav>
+        </header>
+
+        {% block content %}
+
+        <!--{% include "blog.html" %}-->
+
+        {% endblock %}
+        
+        <footer>
+            
+        
+            <ul>
+                <li><a href="" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <p>Send a Email: impact.pioneers@gmail.com</p><br/>
+            
+            
+            <p>&copy;<script>document.write(new Date().getFullYear())</script> THE PIONEERS ESTABLISHED IN 2018</p>
+            
+        </footer>
+        <script type="text/javascript">
+  $(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {e.preventDefault();
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').stop().animate({
+          'scrollTop': $target.offset().top-100
+    }, 900, 'swing', function () {
+          window.location.hash = target-100;
+    });
+         });
+});
+</script>
+        
+        <script>
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                  x.className += " responsive";
+                } else {
+                  x.className = "topnav";
+                }
+              } 
+        </script>
+    </body>
+    
+</html>
