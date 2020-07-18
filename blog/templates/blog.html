@@ -142,7 +142,7 @@
 
           <div id="content">
               
-              <ul>{% for post in object_list %}
+              <ul>{% for post in blog_post %}
 
                <a href="{% url 'article-detail' post.pk %}"><h2>{{ post.title }}</h2></a>
                <small>By
